@@ -178,12 +178,12 @@
     padding: 0 0.1em;
   }
   sup.fn a:hover { color: var(--gold); }
-  .notes { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--hairline); }
+  .notes { display: none; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--hairline); }
+  @media print { .notes { display: block; } .fn-pop { display: none !important; } }
   .notes h3 { font-family: var(--sans); font-size: 0.8125rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--softgray); margin: 0 0 0.75rem; }
   .notes ol { margin: 0; padding-left: 1.5rem; font-size: 0.9375rem; line-height: 1.5; }
   .notes li { margin-bottom: 0.65rem; padding-left: 0.25rem; }
   .notes li:target { background: #FBF6E4; outline: 4px solid #FBF6E4; }
-  .fn-back { font-family: var(--sans); text-decoration: none; margin-left: 0.25rem; }
   .fn-pop {
     position: absolute;
     z-index: 50;
@@ -200,8 +200,6 @@
     display: none;
   }
   .fn-pop.open { display: block; }
-  .fn-pop .fn-back { display: none; }
-  .fn-pop .fn-go { display: block; margin-top: 0.5rem; font-size: 0.8125rem; color: var(--softgray); }
   @media (max-width: 40em) { .fn-pop { max-width: none; left: var(--gutter) !important; right: var(--gutter); } }
 
   blockquote {
@@ -314,17 +312,17 @@
       <p class="attr">Byron Cook, AWS Security Blog (2024)&#8288;<sup class="fn"><a id="fnref-8" href="#fn-8" data-fn="8">[8]</a></sup></p>
     </blockquote>
 
-    <div class="notes" id="notes">
+    <div class="notes" id="notes" aria-hidden="true">
       <h3>Notes</h3>
       <ol>
-        <li id="fn-1">DARPA, <a href="https://www.darpa.mil/news/2025/aixcc-results">"AI Cyber Challenge marks pivotal inflection point for cyber defense"</a> (August 8, 2025). In the scored final round, competitors' autonomous systems found 54 of 63 synthetic vulnerabilities (86 percent) across roughly 54 million lines of open-source code, and patched 68 percent of those found. <a class="fn-back" href="#fnref-1" aria-label="Back to text">↩</a></li>
-        <li id="fn-2">Anthropic, <a href="https://www.anthropic.com/research/glasswing-initial-update">"Project Glasswing: An initial update"</a> (May 2026). About 50 partner organizations using Claude Mythos Preview reported more than 10,000 high- or critical-severity vulnerabilities in the program's first month. Of 1,752 high- or critical-rated findings assessed by six independent security research firms or by Anthropic, 90.6 percent were confirmed as true positives. <a class="fn-back" href="#fnref-2" aria-label="Back to text">↩</a></li>
-        <li id="fn-3">OpenAI, <a href="https://deploymentsafety.openai.com/gpt-5-6">GPT-5.6 System Card</a> (July 2026), which rates the GPT-5.6 models as "High" cybersecurity capability under OpenAI's Preparedness Framework and reports that they could find vulnerabilities and exploit components but not carry out autonomous end-to-end attacks against hardened targets. See also OpenAI, <a href="https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/">"Responding to the next frontier of critical cyber capabilities"</a> (July 8, 2026). <a class="fn-back" href="#fnref-3" aria-label="Back to text">↩</a></li>
-        <li id="fn-4">The report's own assessment; see Section 1, "The Moment: AI Has Changed the Equation." <a class="fn-back" href="#fnref-4" aria-label="Back to text">↩</a></li>
-        <li id="fn-5">Finding and fixing faster matters, and two programs now apply frontier models to defense at scale: Anthropic's <a href="https://www.anthropic.com/research/glasswing-initial-update">Project Glasswing</a> and OpenAI's <a href="https://openai.com/daybreak/">Daybreak</a>. The report's argument is that patching alone cannot keep pace with discovery, so the structure of the software has to change as well. <a class="fn-back" href="#fnref-5" aria-label="Back to text">↩</a></li>
-        <li id="fn-6">See Section 3 of the report, "Proven in Production," for the evidence base. <a class="fn-back" href="#fnref-6" aria-label="Back to text">↩</a></li>
-        <li id="fn-7">Google, <a href="https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html">"Eliminating Memory Safety Vulnerabilities at the Source"</a> (September 2024): memory-safety issues accounted for 76 percent of Android vulnerabilities in 2019 and 24 percent in 2024. Google, <a href="https://blog.google/security/rust-in-android-move-fast-fix-things/">"Rust in Android: move fast and fix things"</a> (November 2025): below 20 percent in 2025. <a class="fn-back" href="#fnref-7" aria-label="Back to text">↩</a></li>
-        <li id="fn-8">Byron Cook, <a href="https://aws.amazon.com/blogs/security/an-unexpected-discovery-automated-reasoning-often-makes-systems-more-efficient-and-easier-to-maintain">"An unexpected discovery: Automated reasoning often makes systems more efficient and easier to maintain"</a>, AWS Security Blog (October 2024). <a class="fn-back" href="#fnref-8" aria-label="Back to text">↩</a></li>
+        <li id="fn-1">DARPA, <a href="https://www.darpa.mil/news/2025/aixcc-results">"AI Cyber Challenge marks pivotal inflection point for cyber defense"</a> (August 8, 2025). In the scored final round, competitors' autonomous systems found 54 of 63 synthetic vulnerabilities (86 percent) across roughly 54 million lines of open-source code, and patched 68 percent of those found.</li>
+        <li id="fn-2">Anthropic, <a href="https://www.anthropic.com/research/glasswing-initial-update">"Project Glasswing: An initial update"</a> (May 2026). About 50 partner organizations using Claude Mythos Preview reported more than 10,000 high- or critical-severity vulnerabilities in the program's first month. Of 1,752 high- or critical-rated findings assessed by six independent security research firms or by Anthropic, 90.6 percent were confirmed as true positives.</li>
+        <li id="fn-3">OpenAI, <a href="https://deploymentsafety.openai.com/gpt-5-6">GPT-5.6 System Card</a> (July 2026), which rates the GPT-5.6 models as "High" cybersecurity capability under OpenAI's Preparedness Framework and reports that they could find vulnerabilities and exploit components but not carry out autonomous end-to-end attacks against hardened targets. See also OpenAI, <a href="https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/">"Responding to the next frontier of critical cyber capabilities"</a> (July 8, 2026).</li>
+        <li id="fn-4">The report's own assessment; see Section 1, "The Moment: AI Has Changed the Equation."</li>
+        <li id="fn-5">Finding and fixing faster matters, and two programs now apply frontier models to defense at scale: Anthropic's <a href="https://www.anthropic.com/research/glasswing-initial-update">Project Glasswing</a> and OpenAI's <a href="https://openai.com/daybreak/">Daybreak</a>. The report's argument is that patching alone cannot keep pace with discovery, so the structure of the software has to change as well.</li>
+        <li id="fn-6">See Section 3 of the report, "Proven in Production," for the evidence base.</li>
+        <li id="fn-7">Google, <a href="https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html">"Eliminating Memory Safety Vulnerabilities at the Source"</a> (September 2024): memory-safety issues accounted for 76 percent of Android vulnerabilities in 2019 and 24 percent in 2024. Google, <a href="https://blog.google/security/rust-in-android-move-fast-fix-things/">"Rust in Android: move fast and fix things"</a> (November 2025): below 20 percent in 2025.</li>
+        <li id="fn-8">Byron Cook, <a href="https://aws.amazon.com/blogs/security/an-unexpected-discovery-automated-reasoning-often-makes-systems-more-efficient-and-easier-to-maintain">"An unexpected discovery: Automated reasoning often makes systems more efficient and easier to maintain"</a>, AWS Security Blog (October 2024).</li>
       </ol>
     </div>
   </div>
@@ -371,44 +369,38 @@
 <script>
 (function () {
   var pop = document.getElementById('fn-pop');
-  var coarse = window.matchMedia('(pointer: coarse)').matches;
-  var current = null, hideTimer = null;
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var current = null, pinned = false, hideTimer = null;
 
   function show(ref) {
-    var n = ref.getAttribute('data-fn');
-    var note = document.getElementById('fn-' + n);
+    var note = document.getElementById('fn-' + ref.getAttribute('data-fn'));
     if (!note) return;
-    pop.innerHTML = note.innerHTML + '<a class="fn-go" href="#fn-' + n + '">Go to note ' + n + ' ↓</a>';
+    pop.innerHTML = note.innerHTML;
     pop.classList.add('open');
     current = ref;
     var r = ref.getBoundingClientRect();
-    var top = r.bottom + window.scrollY + 8;
-    var left = r.left + window.scrollX;
-    pop.style.top = top + 'px';
+    pop.style.top = (r.bottom + window.scrollY + 8) + 'px';
     pop.style.left = '0px';
-    var w = pop.offsetWidth;
-    var maxLeft = document.documentElement.clientWidth - w - 16;
-    pop.style.left = Math.max(16, Math.min(left, maxLeft)) + 'px';
+    var maxLeft = document.documentElement.clientWidth - pop.offsetWidth - 16;
+    pop.style.left = Math.max(16, Math.min(r.left + window.scrollX, maxLeft)) + 'px';
   }
-  function hide() { pop.classList.remove('open'); current = null; }
-  function scheduleHide() { clearTimeout(hideTimer); hideTimer = setTimeout(hide, 180); }
+  function hide() { pop.classList.remove('open'); current = null; pinned = false; }
+  function scheduleHide() { if (pinned) return; clearTimeout(hideTimer); hideTimer = setTimeout(hide, 180); }
 
   document.querySelectorAll('sup.fn a').forEach(function (ref) {
-    if (!coarse) {
-      ref.addEventListener('mouseenter', function () { clearTimeout(hideTimer); show(ref); });
+    ref.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (current === ref && pinned) { hide(); } else { show(ref); pinned = true; }
+    });
+    if (fine) {
+      ref.addEventListener('mouseenter', function () { clearTimeout(hideTimer); if (!pinned) show(ref); });
       ref.addEventListener('mouseleave', scheduleHide);
-      ref.addEventListener('focus', function () { show(ref); });
-      ref.addEventListener('blur', scheduleHide);
-    } else {
-      ref.addEventListener('click', function (e) {
-        e.preventDefault();
-        if (current === ref) { hide(); } else { show(ref); }
-      });
     }
+    ref.addEventListener('focus', function () { if (!pinned) show(ref); });
+    ref.addEventListener('blur', scheduleHide);
   });
   pop.addEventListener('mouseenter', function () { clearTimeout(hideTimer); });
   pop.addEventListener('mouseleave', scheduleHide);
-  pop.addEventListener('click', function (e) { if (e.target.classList.contains('fn-go')) hide(); });
   document.addEventListener('click', function (e) {
     if (pop.classList.contains('open') && !pop.contains(e.target) && !(e.target.closest && e.target.closest('sup.fn'))) hide();
   });
