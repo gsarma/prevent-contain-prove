@@ -167,6 +167,43 @@
   @media (min-width: 34em) { .functions dfn { margin-bottom: 0; } }
   .functions span { display: block; }
 
+
+  /* ---------- Footnotes ---------- */
+  sup.fn { font-size: 0.7em; line-height: 0; vertical-align: super; }
+  sup.fn a {
+    font-family: var(--sans);
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--navy);
+    padding: 0 0.1em;
+  }
+  sup.fn a:hover { color: var(--gold); }
+  .notes { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--hairline); }
+  .notes h3 { font-family: var(--sans); font-size: 0.8125rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--softgray); margin: 0 0 0.75rem; }
+  .notes ol { margin: 0; padding-left: 1.5rem; font-size: 0.9375rem; line-height: 1.5; }
+  .notes li { margin-bottom: 0.65rem; padding-left: 0.25rem; }
+  .notes li:target { background: #FBF6E4; outline: 4px solid #FBF6E4; }
+  .fn-back { font-family: var(--sans); text-decoration: none; margin-left: 0.25rem; }
+  .fn-pop {
+    position: absolute;
+    z-index: 50;
+    max-width: 22rem;
+    background: #fff;
+    color: var(--ink);
+    border: 1px solid var(--hairline);
+    border-top: 3px solid var(--gold);
+    box-shadow: 0 6px 24px rgba(27,42,74,0.14);
+    padding: 0.85rem 1rem;
+    font-family: var(--sans);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    display: none;
+  }
+  .fn-pop.open { display: block; }
+  .fn-pop .fn-back { display: none; }
+  .fn-pop .fn-go { display: block; margin-top: 0.5rem; font-size: 0.8125rem; color: var(--softgray); }
+  @media (max-width: 40em) { .fn-pop { max-width: none; left: var(--gutter) !important; right: var(--gutter); } }
+
   blockquote {
     margin: 2rem 0;
     padding: 0.35rem 0 0.35rem 1.1rem;
@@ -249,14 +286,15 @@
 
     <p class="lede">For decades, the cost of expert labor set a practical limit on software attack: finding an important vulnerability took weeks or months of specialist work, and turning it into a reliable exploit took more. Frontier AI is removing that limit.</p>
 
-    <p>The shift is measurable. In 2025, autonomous systems in DARPA's AI Cyber Challenge found 86 percent of the vulnerabilities planted in critical-infrastructure software. By spring 2026, frontier models were surfacing thousands of previously unknown vulnerabilities across every major operating system and browser — more than ten thousand high- or critical-severity findings from some fifty organizations in a single month, with independent security firms confirming over 90 percent of a sampled set as real. Today's models are better at finding flaws than at exploiting them end to end, but their makers caution that the gap may narrow, and capabilities that once required a nation-state are reaching criminal groups and individuals. On the current trajectory, defensive adoption will fall well behind offensive automation: the window is defined by lead time, not by any present limit on what attackers can do.</p>
+    <p>The shift is measurable. In 2025, autonomous systems in DARPA's AI Cyber Challenge found 86 percent of the vulnerabilities planted in critical-infrastructure software.&#8288;<sup class="fn"><a id="fnref-1" href="#fn-1" data-fn="1">[1]</a></sup> By spring 2026, frontier models were surfacing thousands of previously unknown vulnerabilities across every major operating system and browser — more than ten thousand high- or critical-severity findings from some fifty organizations in a single month, with independent security firms confirming over 90 percent of a sampled set as real.&#8288;<sup class="fn"><a id="fnref-2" href="#fn-2" data-fn="2">[2]</a></sup> Today's models are better at finding flaws than at exploiting them end to end, but their makers caution that the gap may narrow,&#8288;<sup class="fn"><a id="fnref-3" href="#fn-3" data-fn="3">[3]</a></sup> and capabilities that once required a nation-state are reaching criminal groups and individuals. On the current trajectory, defensive adoption will fall well behind offensive automation: the window is defined by lead time, not by any present limit on what attackers can do.&#8288;<sup class="fn"><a id="fnref-4" href="#fn-4" data-fn="4">[4]</a></sup></p>
 
-    <p>The answer is not to patch faster. This report argues for changing how consequential software is built, isolated, evaluated, and procured, through <em>high-assurance engineering</em>: memory-safe languages, compartmentalized architectures, and formal methods — techniques that rule out whole classes of failure before code ships, rather than hunting for defects one at a time. None of this is theoretical: Apple, Amazon, Google, Intel, and Microsoft run verification programs today; after Android moved new code to memory-safe languages, the share of its vulnerabilities attributable to memory safety fell from 76 percent to under 20; and a wave of venture-backed startups is pushing the frontier of automated mathematical reasoning.</p>
+    <p>The answer is not simply to patch faster.&#8288;<sup class="fn"><a id="fnref-5" href="#fn-5" data-fn="5">[5]</a></sup> This report argues for changing how consequential software is built, isolated, evaluated, and procured, through <em>high-assurance engineering</em>: memory-safe languages, compartmentalized architectures, and formal methods — techniques that rule out whole classes of failure before code ships, rather than hunting for defects one at a time. None of this is theoretical: Apple, Amazon, Google, Intel, and Microsoft run verification programs today;&#8288;<sup class="fn"><a id="fnref-6" href="#fn-6" data-fn="6">[6]</a></sup> after Android moved new code to memory-safe languages, the share of its vulnerabilities attributable to memory safety fell from 76 percent to under 20;&#8288;<sup class="fn"><a id="fnref-7" href="#fn-7" data-fn="7">[7]</a></sup> and a wave of venture-backed startups is pushing the frontier of automated mathematical reasoning.</p>
 
     <p>The challenge is a limited pool of experts who can lead industrial-scale high-assurance engineering. Those who exist work mainly at a handful of large companies, on selected components of those companies' own products. Meanwhile, the systems where failure would cost the most are built and bought by organizations with no verification team, no way to evaluate a vendor's claims, and no procurement rule or insurer asking for evidence. Given the track record of these techniques in the best-resourced parts of industry, the question is not whether they work, but how quickly their adoption can be made ordinary and brought to scale.</p>
 
     <blockquote>
       <p>Cities did not fight fires by hiring more firefighters alone; they wrote building codes — requiring fire-resistant materials, mandating firewalls between units, and inspecting the result — and applied them first and most strictly to the buildings where failure would cost the most.</p>
+      <p class="attr">From the report</p>
     </blockquote>
 
     <p>For decision makers, the techniques serve three functions, which together define the strategy:</p>
@@ -273,8 +311,22 @@
 
     <blockquote>
       <p>Formally verified code is often more performant than the unverified code it replaces.</p>
-      <p class="attr">Byron Cook, AWS Security Blog (2024)</p>
+      <p class="attr">Byron Cook, AWS Security Blog (2024)&#8288;<sup class="fn"><a id="fnref-8" href="#fn-8" data-fn="8">[8]</a></sup></p>
     </blockquote>
+
+    <div class="notes" id="notes">
+      <h3>Notes</h3>
+      <ol>
+        <li id="fn-1">DARPA, <a href="https://www.darpa.mil/news/2025/aixcc-results">"AI Cyber Challenge marks pivotal inflection point for cyber defense"</a> (August 8, 2025). In the scored final round, competitors' autonomous systems found 54 of 63 synthetic vulnerabilities (86 percent) across roughly 54 million lines of open-source code, and patched 68 percent of those found. <a class="fn-back" href="#fnref-1" aria-label="Back to text">↩</a></li>
+        <li id="fn-2">Anthropic, <a href="https://www.anthropic.com/research/glasswing-initial-update">"Project Glasswing: An initial update"</a> (May 2026). About 50 partner organizations using Claude Mythos Preview reported more than 10,000 high- or critical-severity vulnerabilities in the program's first month. Of 1,752 high- or critical-rated findings assessed by six independent security research firms or by Anthropic, 90.6 percent were confirmed as true positives. <a class="fn-back" href="#fnref-2" aria-label="Back to text">↩</a></li>
+        <li id="fn-3">OpenAI, <a href="https://deploymentsafety.openai.com/gpt-5-6">GPT-5.6 System Card</a> (July 2026), which rates the GPT-5.6 models as "High" cybersecurity capability under OpenAI's Preparedness Framework and reports that they could find vulnerabilities and exploit components but not carry out autonomous end-to-end attacks against hardened targets. See also OpenAI, <a href="https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/">"Responding to the next frontier of critical cyber capabilities"</a> (July 8, 2026). <a class="fn-back" href="#fnref-3" aria-label="Back to text">↩</a></li>
+        <li id="fn-4">The report's own assessment; see Section 1, "The Moment: AI Has Changed the Equation." <a class="fn-back" href="#fnref-4" aria-label="Back to text">↩</a></li>
+        <li id="fn-5">Finding and fixing faster matters, and two programs now apply frontier models to defense at scale: Anthropic's <a href="https://www.anthropic.com/research/glasswing-initial-update">Project Glasswing</a> and OpenAI's <a href="https://openai.com/daybreak/">Daybreak</a>. The report's argument is that patching alone cannot keep pace with discovery, so the structure of the software has to change as well. <a class="fn-back" href="#fnref-5" aria-label="Back to text">↩</a></li>
+        <li id="fn-6">See Section 3 of the report, "Proven in Production," for the evidence base. <a class="fn-back" href="#fnref-6" aria-label="Back to text">↩</a></li>
+        <li id="fn-7">Google, <a href="https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html">"Eliminating Memory Safety Vulnerabilities at the Source"</a> (September 2024): memory-safety issues accounted for 76 percent of Android vulnerabilities in 2019 and 24 percent in 2024. Google, <a href="https://blog.google/security/rust-in-android-move-fast-fix-things/">"Rust in Android: move fast and fix things"</a> (November 2025): below 20 percent in 2025. <a class="fn-back" href="#fnref-7" aria-label="Back to text">↩</a></li>
+        <li id="fn-8">Byron Cook, <a href="https://aws.amazon.com/blogs/security/an-unexpected-discovery-automated-reasoning-often-makes-systems-more-efficient-and-easier-to-maintain">"An unexpected discovery: Automated reasoning often makes systems more efficient and easier to maintain"</a>, AWS Security Blog (October 2024). <a class="fn-back" href="#fnref-8" aria-label="Back to text">↩</a></li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -314,6 +366,56 @@
     <p>New Directions in Software Technology is hosted by Kestrel Institute.</p>
   </div>
 </footer>
+
+<div class="fn-pop" id="fn-pop" role="tooltip"></div>
+<script>
+(function () {
+  var pop = document.getElementById('fn-pop');
+  var coarse = window.matchMedia('(pointer: coarse)').matches;
+  var current = null, hideTimer = null;
+
+  function show(ref) {
+    var n = ref.getAttribute('data-fn');
+    var note = document.getElementById('fn-' + n);
+    if (!note) return;
+    pop.innerHTML = note.innerHTML + '<a class="fn-go" href="#fn-' + n + '">Go to note ' + n + ' ↓</a>';
+    pop.classList.add('open');
+    current = ref;
+    var r = ref.getBoundingClientRect();
+    var top = r.bottom + window.scrollY + 8;
+    var left = r.left + window.scrollX;
+    pop.style.top = top + 'px';
+    pop.style.left = '0px';
+    var w = pop.offsetWidth;
+    var maxLeft = document.documentElement.clientWidth - w - 16;
+    pop.style.left = Math.max(16, Math.min(left, maxLeft)) + 'px';
+  }
+  function hide() { pop.classList.remove('open'); current = null; }
+  function scheduleHide() { clearTimeout(hideTimer); hideTimer = setTimeout(hide, 180); }
+
+  document.querySelectorAll('sup.fn a').forEach(function (ref) {
+    if (!coarse) {
+      ref.addEventListener('mouseenter', function () { clearTimeout(hideTimer); show(ref); });
+      ref.addEventListener('mouseleave', scheduleHide);
+      ref.addEventListener('focus', function () { show(ref); });
+      ref.addEventListener('blur', scheduleHide);
+    } else {
+      ref.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (current === ref) { hide(); } else { show(ref); }
+      });
+    }
+  });
+  pop.addEventListener('mouseenter', function () { clearTimeout(hideTimer); });
+  pop.addEventListener('mouseleave', scheduleHide);
+  pop.addEventListener('click', function (e) { if (e.target.classList.contains('fn-go')) hide(); });
+  document.addEventListener('click', function (e) {
+    if (pop.classList.contains('open') && !pop.contains(e.target) && !(e.target.closest && e.target.closest('sup.fn'))) hide();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+  window.addEventListener('resize', hide);
+})();
+</script>
 
 </body>
 </html>
