@@ -111,12 +111,6 @@
   }
   .button:hover { background: #d4b04a; text-decoration: none; }
   .cover .button { width: 100%; text-align: center; }
-  .cover .avail { font-family: var(--sans); font-weight: 700; font-size: 1rem; color: var(--gold); margin: 0; }
-  .download .notice {
-    font-family: var(--sans); font-weight: 700; color: var(--navy);
-    border: 1px solid var(--hairline); border-left: 3px solid var(--gold);
-    padding: 0.9rem 1.1rem; margin: 0 0 1rem;
-  }
   @media (min-width: 30em) { .cover .button { width: auto; } }
 
   /* ---------- Body sections ----------
@@ -250,6 +244,7 @@
     margin: 0.9rem 0 0.2rem;
   }
   .committee dd { margin: 0; }
+  .contact { margin-top: 1.5rem; font-size: 0.9375rem; }
 
   footer {
     padding: 2rem 0 3rem;
@@ -271,7 +266,7 @@
     <div class="rule" aria-hidden="true"></div>
     <p class="subtitle">A Framework for Urgently Securing Critical Digital Systems</p>
     <p class="tagline">Strategic Guidance for an Era of AI-Accelerated Offense</p>
-    <p class="avail">The full report will be available here on Tuesday, September 23.</p>
+    <a class="button" href="Prevent-Contain-Prove-NDIST-Strategic-Guidance.pdf">Download the report (PDF)</a>
   </div>
 </header>
 
@@ -286,7 +281,7 @@
 
     <p>The shift is measurable. In 2025, autonomous systems in DARPA's AI Cyber Challenge found 86 percent of the vulnerabilities planted in critical-infrastructure software.&#8288;<sup class="fn"><a id="fnref-1" href="#fn-1" data-fn="1">[1]</a></sup> By spring 2026, frontier models were surfacing thousands of previously unknown vulnerabilities across every major operating system and browser — more than ten thousand high- or critical-severity findings from some fifty organizations in a single month, with independent security firms confirming over 90 percent of a sampled set as real.&#8288;<sup class="fn"><a id="fnref-2" href="#fn-2" data-fn="2">[2]</a></sup> Today's models are better at finding flaws than at exploiting them end to end, but their makers caution that the gap may narrow.&#8288;<sup class="fn"><a id="fnref-3" href="#fn-3" data-fn="3">[3]</a></sup> In July 2026, those capabilities appeared in the wild.&#8288;<sup class="fn"><a id="fnref-4" href="#fn-4" data-fn="4">[4]</a></sup> Capabilities that once required a nation-state are reaching criminal groups and individuals, and on the current trajectory, defensive adoption will fall well behind offensive automation: the window is defined by lead time, not by any present limit on what attackers can do.&#8288;<sup class="fn"><a id="fnref-5" href="#fn-5" data-fn="5">[5]</a></sup></p>
 
-    <p>The answer is not simply to patch faster.&#8288;<sup class="fn"><a id="fnref-6" href="#fn-6" data-fn="6">[6]</a></sup> This report argues for changing how consequential software is built, through <em>high-assurance engineering</em>: memory-safe languages and hardware, compartmentalized architectures, and formal methods — a body of practice, adopted in proportion to consequence, that prevents important categories of failure by construction, contains them by architecture, or rules them out by rigorous analysis. None of this is theoretical: Apple, Amazon, Google, Intel, and Microsoft run verification programs today;&#8288;<sup class="fn"><a id="fnref-7" href="#fn-7" data-fn="7">[7]</a></sup> after Android moved new code to memory-safe languages, the share of its vulnerabilities attributable to memory safety fell from 76 percent to under 20;&#8288;<sup class="fn"><a id="fnref-8" href="#fn-8" data-fn="8">[8]</a></sup> and a growing cohort of venture-backed startups is driving the frontier of automated mathematical reasoning.&#8288;<sup class="fn"><a id="fnref-9" href="#fn-9" data-fn="9">[9]</a></sup></p>
+    <p>The answer is not simply to patch faster.&#8288;<sup class="fn"><a id="fnref-6" href="#fn-6" data-fn="6">[6]</a></sup> This report argues for changing how consequential software is built, through <em>high-assurance engineering</em>: memory-safe languages and hardware, compartmentalized architectures, and formal methods — a body of practice, adopted in proportion to consequence, that prevents important categories of failure by construction, contains them by architecture, or rules them out by rigorous analysis. None of this is theoretical: Apple, Amazon, Google, Intel, Microsoft and others run verification programs today;&#8288;<sup class="fn"><a id="fnref-7" href="#fn-7" data-fn="7">[7]</a></sup> after Android moved new code to memory-safe languages, the share of its vulnerabilities attributable to memory safety fell from 76 percent to under 20;&#8288;<sup class="fn"><a id="fnref-8" href="#fn-8" data-fn="8">[8]</a></sup> and a growing cohort of venture-backed startups is driving the frontier of automated mathematical reasoning.&#8288;<sup class="fn"><a id="fnref-9" href="#fn-9" data-fn="9">[9]</a></sup></p>
 
     <p>The challenge is a limited pool of experts who can lead industrial-scale high-assurance engineering. The deployments above were mostly built by unusually expert teams using tools that remain difficult by industry standards; they show that the guarantees are real, and leave open whether any competent team could reproduce them today. Meanwhile, the long tail of critical infrastructure — community hospitals, water systems, regional utilities — is run by organizations with no verification team, no way to evaluate a vendor's claims, and no procurement rule or insurer asking for evidence. Given the track record of these techniques in the best-resourced parts of industry, the question is not whether they work, but how quickly their adoption can be made ordinary and brought to scale.</p>
 
@@ -341,7 +336,7 @@
   <div class="wrap">
     <div class="download">
       <p>The full report includes the actions for decision makers, the production evidence, the phased adoption arc with the assurance artifacts a buyer can request at each stage, the emerging ecosystem of independent evaluation, a candid account of costs and limitations, and an appendix of techniques and representative tools.</p>
-      <p class="notice">The full report (PDF) will be available on this page on Tuesday, September 23, 2026.</p>
+      <a class="button" href="Prevent-Contain-Prove-NDIST-Strategic-Guidance.pdf">Download the report (PDF)</a>
       <p class="cite">Cite as: NDIST Strategic Guidance Committee (2026). <em>Prevent, Contain, Prove: A Framework for Urgently Securing Critical Digital Systems.</em> New Directions in Software Technology.</p>
     </div>
   </div>
@@ -352,7 +347,7 @@
     <h2>About NDIST</h2>
     <div class="rule" aria-hidden="true"></div>
 
-    <p>New Directions in Software Technology (NDIST) is an annual invitation-only workshop hosted by <a href="https://www.kestrel.edu/">Kestrel Institute</a>, a nonprofit computer science research center in Palo Alto, California. For over two decades, NDIST has convened researchers, practitioners, and decision makers from academia, industry, and government to examine emerging challenges and opportunities in software technology. Each year's workshop focuses on a different theme; past topics have included synthetic biology, 3D printing, and artificial intelligence.</p>
+    <p>New Directions in Software Technology (NDIST) is an annual invitation-only workshop hosted by the <a href="https://www.kestrel.edu/">Kestrel Institute</a>, a nonprofit computer science research center in Palo Alto, California. For over two decades, NDIST has convened researchers, practitioners, and decision makers from academia, industry, and government to examine emerging challenges and opportunities in software technology. Each year's workshop focuses on a different theme; past topics have included synthetic biology, 3D printing, and artificial intelligence.</p>
 
     <p>The Strategic Guidance Committee was formed at NDIST to develop this document through an open review process, drawing on the workshop's longstanding role as a forum for cross-disciplinary dialogue on the future of software. The report reflects extensive expert input, multiple rounds of open review, and sustained technical discussion among committee members and a wider community of stakeholders.</p>
 
@@ -362,6 +357,8 @@
       <dt>Committee members</dt>
       <dd>Mike Dodds (Oath Technologies), David Hardin (Collins Aerospace), Robert Laddaga, Pat Lincoln (SRI), Paul Robertson (DOLL Labs), Howard Shrobe (MIT CSAIL), Eric Smith (Kestrel Institute), János Sztipánovits (Vanderbilt University), Stephen Westfold (Kestrel Institute)</dd>
     </dl>
+
+    <p class="contact">Contact: <a href="mailto:contact@prevent-contain-prove.org">contact@prevent-contain-prove.org</a></p>
   </div>
 </section>
 
@@ -369,8 +366,8 @@
 
 <footer>
   <div class="wrap">
-    <p>Distribution Statement A. Approved for public release: distribution is unlimited.</p>
-    <p>New Directions in Software Technology is hosted by Kestrel Institute.</p>
+    <p>New Directions in Software Technology is hosted by the Kestrel Institute.</p>
+    <p><a href="mailto:contact@prevent-contain-prove.org">contact@prevent-contain-prove.org</a></p>
   </div>
 </footer>
 
